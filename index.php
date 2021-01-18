@@ -8,24 +8,41 @@
 <body>
     <h1 id="title">タイトル１</h1>
     <p id="element1">要素１</p>
-    <script src="./jquery-3.5.1.min.js">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        // 一度HTML全体が準備できた後に実行
+        // $(document).ready (
+        //     function() {
+        //         $("#title").text("タイトル変更");                
+        //     }
+        // );
+        // こっちの書き方が主流
+        $(function() {
+            $("#title").text ("タイトル変更");
+        });
     </script>
 </body>
 </html>
 
 <!-- 
-jQueryの基本（ライブラリの読み込み）
+jQueryの基本（DOMの操作）
 ・書き方
 　1．ライブラリを読み込む（インクルードする）
 　2．jQueryが提供する機能を使ってDOMを操作する
 
-・ライブラリの読み込み
-　－　ダウンロードしてパスを指定する
-　－　CDN（Contents Distribution Network）のURLを指定する
-　　－　読み込みが早くなる場合がある
-
-
+・DOMの操作
+　－　基本形
+　　－　対象の要素.操作内容
+　　　－　どの要素（対象の要素）に対して何をするか（操作内容）
+　－　対象の要素
+　　－　jQuery関数
+　　　－　jQuery() or $()
+　　　　－　$("#id)
+　　　　－　$(document)
+　　－　戻り値がjQueryオブジェクト
+　－　操作内容
+　　－　jQueryオブジェクトのメソッド
+　　－　$("#id").text();
 
  -->
