@@ -6,50 +6,60 @@
     <title>jQuery</title>
 </head>
 <body>
-    <h1 id="title1" class="title">コンパイル言語</h1>
-    <ul>
-        <li id="java">Java</li>
-        <li id="c">C</li>
-        <li id="objective-c">ObjectiveC</li>
-    </ul>
-    <h1 id="title2" class="title">スクリプト言語</h1>
-    <ul>
-        <li id="js">JavaScript</li>
-        <li id="ruby">Ruby</li>
-        <li id="python">Python</li>
-        <li id="php">PHP</li>
-        <li id="perl">perl</li>
-    </ul>
+    <div id="compile">
+        <h1 id="title1" class="title">コンパイル言語</h1>
+        <ul>
+            <li id="java">Java</li>
+            <li id="c">C</li>
+                <ul>
+                    <li id="cpp">C++</li>
+                    <li id="cs">C#</li>
+                </ul>
+            <li id="objective-c">ObjectiveC</li>
+        </ul>
+    </div>
+    <div id="script">
+        <h1 id="title2" class="title">スクリプト言語</h1>
+        <ul>
+            <li id="js">JavaScript</li>
+            <li id="ruby">Ruby</li>
+            <li id="python">Python</li>
+            <li id="php">PHP</li>
+            <li id="perl">perl</li>
+        </ul>
+    </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="./jquery-3.5.1.min.js"></script>
     <script>
         $(function(){
-            // タグ名
-            // $("li").css("color", "red");
-            // ID
-            // $("#title2").css("color", "blue");
-            // クラス名
-            $(".title").css("color", "green");
+        // －　（スペース）
+        // ある要素の配下の要素
+        // $("#compile ul").css("color", "red");
+        // －　>
+        // ある要素の直下の要素
+        // 上の例ではCの下が除かれる
+        // $("#compile > ul").css("color", "blue");
+        // －　+
+        // ある要素の次の要素
+        $("#ruby + li").css("color", "green");
+        // －　~
+        // ある要素移行の全ての要素
+        $("#ruby ~ li").css("color", "yellow");
         });
     </script>
 </body>
 </html>
 
 <!-- 
-    セレクタの指定
-    ・jQueryの基本
-    －　$(), jQueryオブジェクト
-    －　$(args).method
-    ・セレクタとは
-    －　特定の要素を取得するための記法
-    ・基本
-    －　タグ名
-    　－　$("#tag_name")
-    　－　$(div)など
-    －　ID
-    　－　$("#id")
-    －　クラス名
-    　－　$(".class_name")
-
-    CSSと一緒
+    階層セレクタで要素を絞り込む
+    ・階層セレクタとは？
+    －　要素の親子関係で絞り込む
+    ・書き方
+    $("基本セレクタ　結合子　基本セレクタ")     ×("基本セレクタ" 結合子 "基本セレクタ")
+    ・結合子
+    －　（スペース）
+    －　>
+    －　+
+    －　~
+    
  -->
