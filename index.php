@@ -6,43 +6,50 @@
     <title>jQuery</title>
 </head>
 <body>
-    <h1 id="title">タイトル１</h1>
-    <p id="element1">要素１</p>
+    <h1 id="title1" class="title">コンパイル言語</h1>
+    <ul>
+        <li id="java">Java</li>
+        <li id="c">C</li>
+        <li id="objective-c">ObjectiveC</li>
+    </ul>
+    <h1 id="title2" class="title">スクリプト言語</h1>
+    <ul>
+        <li id="js">JavaScript</li>
+        <li id="ruby">Ruby</li>
+        <li id="python">Python</li>
+        <li id="php">PHP</li>
+        <li id="perl">perl</li>
+    </ul>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="./jquery-3.5.1.min.js"></script>
     <script>
-        // 一度HTML全体が準備できた後に実行
-        // $(document).ready (
-        //     function() {
-        //         $("#title").text("タイトル変更");                
-        //     }
-        // );
-        // こっちの書き方が主流
-        $(function() {
-            $("#title").text ("タイトル変更");
+        $(function(){
+            // タグ名
+            // $("li").css("color", "red");
+            // ID
+            // $("#title2").css("color", "blue");
+            // クラス名
+            $(".title").css("color", "green");
         });
     </script>
 </body>
 </html>
 
 <!-- 
-jQueryの基本（DOMの操作）
-・書き方
-　1．ライブラリを読み込む（インクルードする）
-　2．jQueryが提供する機能を使ってDOMを操作する
+    セレクタの指定
+    ・jQueryの基本
+    －　$(), jQueryオブジェクト
+    －　$(args).method
+    ・セレクタとは
+    －　特定の要素を取得するための記法
+    ・基本
+    －　タグ名
+    　－　$("#tag_name")
+    　－　$(div)など
+    －　ID
+    　－　$("#id")
+    －　クラス名
+    　－　$(".class_name")
 
-・DOMの操作
-　－　基本形
-　　－　対象の要素.操作内容
-　　　－　どの要素（対象の要素）に対して何をするか（操作内容）
-　－　対象の要素
-　　－　jQuery関数
-　　　－　jQuery() or $()
-　　　　－　$("#id)
-　　　　－　$(document)
-　　－　戻り値がjQueryオブジェクト
-　－　操作内容
-　　－　jQueryオブジェクトのメソッド
-　　－　$("#id").text();
-
+    CSSと一緒
  -->
