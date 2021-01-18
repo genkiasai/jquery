@@ -6,63 +6,26 @@
     <title>jQuery</title>
 </head>
 <body>
-    <div id="compile">
-        <h1 id="title1" class="title">コンパイル言語</h1>
-        <ul>
-            <li id="java">Java</li>
-            <li id="c">C
-                <ul>
-                    <li id="cpp">C++</li>
-                    <li id="cs">C#</li>
-                </ul>
-            </li>
-            <li id="objective-c">ObjectiveC</li>
-        </ul>
-    </div>
-    <div id="script">
-        <h1 id="title2" class="title">スクリプト言語</h1>
-        <ul>
-            <li id="js">JavaScript</li>
-            <li id="ruby">Ruby</li>
-            <li id="python">Python</li>
-            <li id="php">PHP</li>
-            <li id="perl">perl</li>
-        </ul>
-    </div>
+    <a href="http://google.co.jp">Google</a>
+    <a href="http://yahoo.co.jp" target="_blank">Yahoo</a>
+    <a href="http://bing.com" target="self">Bing</a>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="./jquery-3.5.1.min.js"></script>
     <script>
-//     －　取得した要素の順番
-// 　    －　:first, :last
-        // $("#compile li:last").css("color", "red");
-//  　   －　:even, :add
-        // $("#compile li:even").css("color", "red");
-// 　    －　:eq(index), :li(index), :gt(index)
-        // $("#compile li:eq(1)").css("color", "red");
-//     －　条件を満たす子要素の有無
-//     　－　:has(selector)
-        $("li:has(ul)").css("color", "red");
-//     －　内容の有無
-//     　－　:empty, :parent
-//     　－　:contains(text)
-        // $("#compile li:contains(C)").css("color", "red");
+        $(function(){
+            // $("a[target]").css("color", "red");
+            // $("a[target='_blank']").css("color", "red");
+            // *='文字列'：その文字を含むもの
+            // $("a[href*='co.jp']").css("color", "red");
+            $("a[href*='co.jp'][target]").css("color", "red");
+        });
     </script>
 </body>
 </html>
 
 <!-- 
-    フィルタで要素を絞り込む
-    ・フィルタとは
-    －　取得した要素をさらに絞り込むための条件
-    ・様々なフィルタ
-    －　取得した要素の順番
-　    －　:first, :last
- 　   －　:even, :add   even：偶数
-　    －　:eq(index), :li(index), :gt(index)
-    －　条件を満たす子要素の有無
-    　－　:has(selector)
-    －　内容の有無
-    　－　:empty, :parent
-    　－　:contains(text)
+    属性フィルタで要素を絞り込む
+    ・属性フィルタとは
+    －　条件を満たす属性や属性値で絞り込む
     
  -->
